@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<h5 class="card-title  fw-semibold mb-4">Slider</h5>
+<a asp-action="Create" class="btn btn-outline-success m-1">Create</a>
+<div class="table-responsive">
+    <table class="table table-bordered text-nowrap mb-0 align-middle">
+        <thead class="text-dark fs-4">
+            <tr>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">ID</h6>
+                </td>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Category Name</h6>
+                </td>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Action</h6>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">Id</h6>
+                </td>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0"Name</h6>
+                </td>
+                <td class="border-bottom-0">
+                    <a asp-action="Update" asp-route-id="Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-route-id="Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+
+        </tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">@item.Id</h6>
+                </td>
+                <td class="border-bottom-0">
+                    <h6 class="fw-semibold mb-0">@item.Name</h6>
+                </td>
+                <td class="border-bottom-0">
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+
+
