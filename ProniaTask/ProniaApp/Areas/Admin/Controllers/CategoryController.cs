@@ -19,7 +19,7 @@ namespace ProniaApp.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Categories.Where(x => !x.IsDeleted).Select(s => new GetCategoryVM
+            var data = await _context.Categories.Where(x => !x.IsDeleted).Select(s => new GetCategoryAdminVM
             {
                 Id = s.Id,
                 Name = s.Namee,

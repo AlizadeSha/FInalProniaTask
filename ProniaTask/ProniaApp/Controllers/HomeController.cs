@@ -16,7 +16,7 @@ namespace ProniaApp.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var data = await _context.Categories.Where(x=>x.IsDeleted==false).Select(x=> new GetCategoryVM {Id=x.Id,Name=x.Namee }).ToListAsync();
+            var data = await _context.Categories.Where(x=>x.IsDeleted==false).Select(x=> new GetCategoryAdminVM {Id=x.Id,Name=x.Namee }).ToListAsync();
             return View(data);
         }
 
